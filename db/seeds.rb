@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
   # Admin User can login & add most other data via ActiveAdmin
-  @user = User.new(:email => "user@codemontage.com", :password => "passw0rd")
+  @user = User.new(:email => "hello@codemontage.com", :password => "passw0rd")
   @user.is_admin = true
   @user.save!
 

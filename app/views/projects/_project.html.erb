@@ -4,9 +4,10 @@
       <span class="favorite">
         <% if user_signed_in? %>
           <% if current_user.favorited_projects.include?(project.id) %>
-            <%= link_to '<i class="fi-star"></i> '.html_safe, dashboard_path, :class => "favorited" %>
+            <%= link_to '<i class="fi-star"></i> '.html_safe, :class => "favorited", method: :delete do %>
+          <% end %>
           <% else %>
-            <%= button_to "Save", favorites_path(:project_id => project.id), :remote => true, :class => "favorite radius button" %>
+            <%= button_to "Save", :remote => true, :class => "favorite radius button" %>
           <% end %>
         <% else %>
           <%= link_to '<i class="fi-star"></i> '.html_safe + "Save", new_user_session_path, :target => '_blank' %>
